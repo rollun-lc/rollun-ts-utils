@@ -16,7 +16,9 @@ function castValueToCSVValue(value: string | number | any) {
  */
 
 export type CSVValue = string | number | any;
-export type CSVRow = {[key: string]: CSVValue} | Array<CSVValue>;
+export type CSVRowObject = {[key: string]: CSVValue};
+export type CSVRowArray = Array<CSVValue>;
+export type CSVRow = CSVRowObject | CSVRowArray;
 export type CSVData = Array<CSVRow>;
 
 function arrayToCSV(flatData: CSVData) {
