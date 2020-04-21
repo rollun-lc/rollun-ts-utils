@@ -42,6 +42,7 @@ jobs:
 
     - name: publish
       run: |
+        git fetch origin
         npm --no-git-tag-version version $(git describe --tags --abbrev=0)
         
         /usr/bin/expect <<EOD
