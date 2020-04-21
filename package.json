@@ -1,0 +1,47 @@
+{
+  "name": "rollun-ts-utils",
+  "main": "dist/index.js",
+  "version": "0.0.1",
+  "description": "Simple JavaScript utils",
+  "scripts": {
+    "analyse": "node_modules/.bin/tslint --project ./tslint.json -e **/__tests__/**",
+    "fix-style": "node_modules/.bin/tslint --fix --project ./tslint.json",
+    "build": "tsc && babel src --ignore node_modules --out-dir dist --extensions '.ts' --minified",
+    "run-tests": "jest",
+    "test": "npm run build && npm run run-tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rollun-com/rollun-ts-utils.git"
+  },
+  "keywords": [
+    "typescript",
+    "rollun",
+    "utils"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rollun-com/rollun-ts-utils/issues"
+  },
+  "homepage": "https://github.com/rollun-com/rollun-ts-utils#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@babel/core": "^7.7.2",
+    "@babel/plugin-proposal-class-properties": "^7.7.0",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-typescript": "^7.7.2",
+    "@types/jest": "^24.0.23",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0",
+    "typescript": "^2.6.2"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  },
+  "files": [
+    "dist/*"
+  ]
+}
