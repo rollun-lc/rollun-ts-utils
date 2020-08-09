@@ -16,3 +16,4 @@ export { default as to24htime }                                       from './to
 export { camelCaseToWords as camelCaseToWords }                       from './transformString';
 export { camelCaseToSnake as camelCaseToSnake }                       from './transformString';
 export { pad as pad }                                                 from './transformString';
+export { resolvePath as resolvePath }                                 from './object';
