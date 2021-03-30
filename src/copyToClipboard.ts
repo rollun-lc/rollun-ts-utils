@@ -1,6 +1,6 @@
-function copyToClipboard(str: string | JSON) {
+function copyToClipboard(str: string | Record<string, any>) {
 	const el = document.createElement('textarea');
-	let value = typeof str === 'object' ? JSON.stringify(str) : str;
+	const value = typeof str === 'object' ? JSON.stringify(str) : str;
 	el.value = value;
 	document.body.appendChild(el);
 	el.select();
