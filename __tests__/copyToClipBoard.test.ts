@@ -13,4 +13,10 @@ describe('Copy to clipboard', () => {
 		expect(document.execCommand).toHaveBeenCalledWith("copy");
 		expect(returnValue).toEqual(JSON.stringify({value: 'string'}));
 	})
+
+	test('test with number', () => {
+		const returnValue = copyToClipboard(4);
+		expect(document.execCommand).toHaveBeenCalledWith("copy");
+		expect(returnValue).toEqual('4');
+	})
 });
