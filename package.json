@@ -4,8 +4,6 @@
   "version": "0.0.2",
   "description": "Simple JavaScript utils",
   "scripts": {
-    "analyse": "node_modules/.bin/tslint --project ./tslint.json -e **/__tests__/**",
-    "fix-style": "node_modules/.bin/tslint --fix --project ./tslint.json",
     "build": "tsc && babel src --ignore node_modules --out-dir dist --extensions '.ts' --minified",
     "run-tests": "jest",
     "test": "npm run build && npm run run-tests"
