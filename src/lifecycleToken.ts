@@ -20,7 +20,7 @@ export class LifecycleToken {
 
   public generateAndSetToken() {
     let lcToken = this.storage.getItem(LifecycleToken.TokenName) || '';
-    if (!lcToken || LifecycleToken.IsValidLCToken(lcToken)) {
+    if (!lcToken || !LifecycleToken.IsValidLCToken(lcToken)) {
       lcToken = LifecycleToken.GenerateLCToken();
       this.storage.setItem(LifecycleToken.TokenName, lcToken);
     }
