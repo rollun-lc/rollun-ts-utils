@@ -10,18 +10,12 @@ export class LifecycleToken {
 
   constructor(private storage: LifecycleTokenStorage) {}
 
-  private static GenerateLCToken() {
-    return randomString(30, 'QWERTYUIOPASDFGHJKLZXCVBNM0123456789');
-  }
-
-  public static IsValidLCToken(token: string | null) {
-    return typeof token === 'string' && token.length === 30;
-  }
-
   public generateAndSetToken() {
     let lcToken = this.storage.getItem(LifecycleToken.TokenName) || '';
-    if (!lcToken || !LifecycleToken.IsValidLCToken(lcToken)) {
-      lcToken = LifecycleToken.GenerateLCToken();
+    const isTokenValid = typeof lcToken === 'string' && lcToken.length === 30;
+
+    if (!lcToken || !isTokenValid) {
+      lcToken = randomString(30, 'QWERTYUIOPASDFGHJKLZXCVBNM0123456789');
       this.storage.setItem(LifecycleToken.TokenName, lcToken);
     }
 
