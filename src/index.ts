@@ -17,4 +17,3 @@ export { camelCaseToWords as camelCaseToWords }                       from './tr
 export { camelCaseToSnake as camelCaseToSnake }                       from './transformString';
 export { pad as pad }                                                 from './transformString';
 export { resolvePath as resolvePath }                                 from './object';
-export *                                                              from './lifecycleToken';
