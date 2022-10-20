@@ -19,6 +19,15 @@ export function isJSON(str: string) {
 	return true;
 }
 
+export function isInt(val: string | number) {
+  if (typeof val === 'number') {
+    return val % 1 === 0;
+  }
+  
+  let n = parseInt(val);
+	return !isNaN(n);
+}
+
 /**
  * strict check if string is valid float
  * Example:
