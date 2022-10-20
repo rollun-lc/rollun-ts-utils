@@ -1,5 +1,5 @@
 # rollun-ts-utils
 
-Utils for Javascript
-
+This library contains utils for backend and frontend.
+Compotable with eathier frontend and backend
 
