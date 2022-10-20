@@ -13,7 +13,12 @@ function copyToClipboard(str: string | Record<string, any> | number) {
 	el.select();
 	document.execCommand('copy');
 	document.body.removeChild(el);
+  
 	return value;
+}
+
+export async function copyToClipboardAsync(str: string) {
+  await navigator.clipboard.writeText(str);
 }
 
 export default copyToClipboard;
