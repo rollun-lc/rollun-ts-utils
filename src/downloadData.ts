@@ -24,7 +24,7 @@ export const downloadAsText = (data: any, filename = 'data.txt') => {
  * Downloads prided {data} with {type}, to {filename} file
  */
 
-type ContentTypes = 'application/json' | 'text/csv' | 'text/plain' | string;
+type ContentTypes = 'application/json' | 'text/csv' | 'text/plain' | 'application/pdf' | string;
 
 export const downloadDataWithContentType = (data: string, type: ContentTypes, filename: string) => {
 	const binaryData = new Blob([data], {type: type});
