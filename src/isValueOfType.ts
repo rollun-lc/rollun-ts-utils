@@ -19,6 +19,20 @@ export function isJSON(str: string) {
 	return true;
 }
 
+export function isJSONObject(str: string) {
+	if (!str) {
+		return false;
+	}
+	try {
+		const parsed = JSON.parse(str);
+		if (!parsed) return false;
+		if (typeof parsed === 'object') return true;
+	} catch (e) {
+		return false;
+	}
+	return false;
+}
+
 export function isInt(val: string | number) {
   if (typeof val === 'number') {
     return val % 1 === 0;
