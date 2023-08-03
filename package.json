@@ -1,7 +1,7 @@
 {
   "name": "rollun-ts-utils",
   "main": "dist/index.js",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Simple JavaScript utils",
   "scripts": {
     "build": "tsc && babel src --ignore node_modules --out-dir dist --extensions '.ts' --minified",
