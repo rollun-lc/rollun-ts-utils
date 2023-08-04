@@ -6,6 +6,7 @@ export { downloadDataWithContentType as downloadDataWithContentType } from './do
 export { downloadAsText as downloadAsText }                           from './downloadData';
 export { isJSON as isJSON }                                           from './isValueOfType';
 export { isFloat as isFloat }                                         from './isValueOfType';
+export { isJSONObject as isJSONObject }                               from './isValueOfType';
 export { default as wait }                                            from './wait';
 export { default as withTimeout }                                     from './withTimeout';
 export { default as difference }                                      from './diff';
