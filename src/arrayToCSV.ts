@@ -1,11 +1,19 @@
 function castValueToCSVValue(value: string | number | any) {
-	if (typeof value === 'string') {
-		return value.replace(/"/g, '""');
-	} else if (typeof value === 'number') {
-		return value.toString();
-	} else {
-		return JSON.stringify(value).replace(/"/g, '""');
+	if(value === null) {
+		return '';
 	}
+
+	let result: string;
+
+	if (typeof value === 'string') {
+		result = value.replace(/"/g, '""');
+	} else if (typeof value === 'number') {
+		result = value.toString();
+	} else {
+		result = JSON.stringify(value).replace(/"/g, '""');
+	}
+
+	return `"${result}"`
 }
 
 /**
@@ -27,7 +35,7 @@ function arrayToCSV(flatData: CSVData) {
 	}
 	const header = `"${Object.keys(flatData[0]).join('","')}"`;
 	const data = flatData
-		.map(row => Object.values(row).map(val => `"${castValueToCSVValue(val)}"`).join(','))
+		.map(row => Object.values(row).map(val => castValueToCSVValue(val)).join(','))
 		.join('\n');
 	return `${header}\n${data}`;
 }
